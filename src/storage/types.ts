@@ -17,6 +17,8 @@ export interface BookingStore {
   /** All bookings, newest first. */
   list(): Promise<Booking[]>;
   setStatus(reference: string, status: BookingStatus): Promise<Booking | null>;
+  /** Permanently removes a booking (e.g. on a guest's deletion request). Returns false if not found. */
+  delete(reference: string): Promise<boolean>;
   /** PENDING + CONFIRMED bookings at a slot (DECLINED frees the table). */
   countActive(date: string, time: string): Promise<number>;
 }

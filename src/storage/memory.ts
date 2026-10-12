@@ -58,6 +58,12 @@ export class MemoryBookingStore implements BookingStore {
     return { ...b };
   }
 
+  async delete(reference: string): Promise<boolean> {
+    const existed = this.bookings.delete(reference);
+    if (existed) await this.persist();
+    return existed;
+  }
+
   async countActive(date: string, time: string): Promise<number> {
     return this.countActiveSync(date, time);
   }

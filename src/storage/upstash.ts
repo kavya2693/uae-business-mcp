@@ -70,6 +70,15 @@ export class UpstashBookingStore implements BookingStore {
     return updated;
   }
 
+  async delete(reference: string): Promise<boolean> {
+    const b = await this.get(reference);
+    if (!b) return false;
+    await this.redis.del(this.bookingKey(reference));
+    await this.redis.srem(this.slotKey(b.date, b.time), reference);
+    await this.redis.zrem(this.refsKey(), reference);
+    return true;
+  }
+
   async countActive(date: string, time: string): Promise<number> {
     return this.redis.scard(this.slotKey(date, time));
   }

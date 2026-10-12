@@ -1,6 +1,7 @@
 // One web-standard fetch handler for every route. Used by both the local dev server and Vercel.
 
 import { createMcpHandler, originValidationResponse } from '@modelcontextprotocol/server';
+import { handleAdmin } from './admin.js';
 import { loadBusiness } from './config.js';
 import { getRateLimiter } from './ratelimit.js';
 import { getStore } from './storage/index.js';
@@ -33,6 +34,9 @@ export async function handle(request: Request): Promise<Response> {
 
   if (path === '/mcp') {
     return originValidationResponse(request, allowedOrigins) ?? mcp.fetch(request);
+  }
+  if (path === '/admin' || path.startsWith('/admin/')) {
+    return handleAdmin(request, path, { business, store, rateLimiter, clientIp });
   }
   if (path === '/health') {
     return Response.json({ ok: true, business: business.id, storage: store.kind, durable: store.durable });
