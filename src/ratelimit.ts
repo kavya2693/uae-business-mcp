@@ -2,6 +2,7 @@
 
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
+import { upstashCredentials } from './upstash-env.js';
 
 export interface RateLimiter {
   /** Counts one hit against every key; fails if any key is over its limit. */
@@ -68,7 +69,7 @@ let limiter: RateLimiter | undefined;
 
 export function getRateLimiter(namespace: string): RateLimiter {
   if (limiter) return limiter;
-  const { UPSTASH_REDIS_REST_URL: url, UPSTASH_REDIS_REST_TOKEN: token } = process.env;
-  limiter = url && token ? new UpstashRateLimiter(new Redis({ url, token }), `${namespace}:ratelimit`) : new MemoryRateLimiter();
+  const creds = upstashCredentials();
+  limiter = creds ? new UpstashRateLimiter(new Redis(creds), `${namespace}:ratelimit`) : new MemoryRateLimiter();
   return limiter;
 }
