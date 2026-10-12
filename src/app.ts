@@ -3,6 +3,7 @@
 import { createMcpHandler, originValidationResponse } from '@modelcontextprotocol/server';
 import { handleAdmin } from './admin.js';
 import { loadBusiness } from './config.js';
+import { privacyPage } from './privacy.js';
 import { getRateLimiter } from './ratelimit.js';
 import { getStore } from './storage/index.js';
 import { buildServer } from './tools.js';
@@ -37,6 +38,9 @@ export async function handle(request: Request): Promise<Response> {
   }
   if (path === '/admin' || path.startsWith('/admin/')) {
     return handleAdmin(request, path, { business, store, rateLimiter, clientIp });
+  }
+  if (path === '/privacy') {
+    return privacyPage(business);
   }
   if (path === '/health') {
     return Response.json({ ok: true, business: business.id, storage: store.kind, durable: store.durable });
