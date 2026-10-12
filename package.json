@@ -1,0 +1,30 @@
+{
+  "name": "uae-business-mcp",
+  "version": "0.1.0",
+  "description": "Remote MCP server template that makes a local UAE business usable by AI agents. One business.json per business.",
+  "scripts": {
+    "dev": "tsx watch dev.ts",
+    "start": "tsx dev.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "inspector": "npx @modelcontextprotocol/inspector"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.3.1",
+    "@upstash/ratelimit": "^2.2.0",
+    "@upstash/redis": "^1.39.0",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
+  },
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

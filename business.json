@@ -1,0 +1,60 @@
+{
+  "id": "demo-kitchen-marina",
+  "isDemo": true,
+  "name": "Demo Kitchen, Dubai Marina",
+  "type": "restaurant",
+  "description": "A fictional casual Emirati and Levantine restaurant used to demonstrate this MCP server template. It does not exist; no real table can be booked here.",
+  "cuisine": ["Emirati", "Levantine", "Middle Eastern"],
+  "priceRange": { "currency": "AED", "minPerPerson": 80, "maxPerPerson": 150 },
+  "address": {
+    "line1": "Demo Tower, Ground Floor, Dubai Marina Walk",
+    "area": "Dubai Marina",
+    "city": "Dubai",
+    "country": "United Arab Emirates"
+  },
+  "phone": "+971 4 000 0000",
+  "email": "hello@demo-kitchen.example",
+  "website": "https://demo-kitchen.example",
+  "timezone": "Asia/Dubai",
+  "languages": ["English", "Arabic"],
+  "amenities": ["Outdoor marina-view terrace", "Family friendly", "High chairs", "Wheelchair accessible", "Valet parking"],
+  "paymentMethods": ["Cash (AED)", "Visa", "Mastercard", "Apple Pay"],
+  "openingHours": {
+    "monday": [{ "open": "12:00", "close": "23:00" }],
+    "tuesday": [{ "open": "12:00", "close": "23:00" }],
+    "wednesday": [{ "open": "12:00", "close": "23:00" }],
+    "thursday": [{ "open": "12:00", "close": "23:30" }],
+    "friday": [{ "open": "13:00", "close": "01:00" }],
+    "saturday": [{ "open": "10:00", "close": "01:00" }],
+    "sunday": [{ "open": "10:00", "close": "23:00" }]
+  },
+  "closures": [],
+  "bookingRules": {
+    "maxPartySize": 8,
+    "largeGroupNote": "For groups larger than 8, ask the guest to call the restaurant directly.",
+    "slotLengthMinutes": 30,
+    "tablesPerSlot": 4,
+    "minimumNoticeMinutes": 120,
+    "maxDaysAhead": 60,
+    "lastSeatingBeforeCloseMinutes": 60,
+    "referencePrefix": "DK"
+  },
+  "menu": [
+    { "id": "hummus", "category": "Cold mezze", "nameEn": "Hummus Beiruti", "nameAr": "حمص بيروتي", "description": "Chickpea and tahini dip with parsley, garlic and chilli.", "priceAED": 32, "dietary": ["vegetarian", "vegan", "halal", "gluten-free"] },
+    { "id": "mutabbal", "category": "Cold mezze", "nameEn": "Mutabbal", "nameAr": "متبل", "description": "Smoked aubergine with tahini and pomegranate.", "priceAED": 30, "dietary": ["vegetarian", "vegan", "halal", "gluten-free"] },
+    { "id": "fattoush", "category": "Salads", "nameEn": "Fattoush", "nameAr": "فتوش", "description": "Garden salad with sumac dressing and crispy bread.", "priceAED": 34, "dietary": ["vegetarian", "vegan", "halal"] },
+    { "id": "tabbouleh", "category": "Salads", "nameEn": "Tabbouleh", "nameAr": "تبولة", "description": "Parsley, bulgur, tomato, mint and lemon.", "priceAED": 32, "dietary": ["vegetarian", "vegan", "halal"] },
+    { "id": "lentil-soup", "category": "Soups", "nameEn": "Lentil Soup", "nameAr": "شوربة عدس", "description": "Red lentil soup with cumin and lemon.", "priceAED": 26, "dietary": ["vegetarian", "vegan", "halal", "gluten-free"] },
+    { "id": "falafel", "category": "Hot mezze", "nameEn": "Falafel Plate", "nameAr": "طبق فلافل", "description": "Six falafel with tahini sauce and pickles.", "priceAED": 36, "dietary": ["vegetarian", "vegan", "halal"] },
+    { "id": "shawarma", "category": "Mains", "nameEn": "Chicken Shawarma Plate", "nameAr": "طبق شاورما دجاج", "description": "Marinated chicken, garlic sauce, fries and pickles.", "priceAED": 58, "dietary": ["halal"] },
+    { "id": "machboos", "category": "Mains", "nameEn": "Chicken Machboos", "nameAr": "مجبوس دجاج", "description": "Emirati spiced rice with slow-cooked chicken and loomi.", "priceAED": 78, "dietary": ["halal", "gluten-free"] },
+    { "id": "mixed-grill", "category": "Mains", "nameEn": "Mixed Grill", "nameAr": "مشاوي مشكلة", "description": "Lamb kofta, shish tawook and lamb cubes from the charcoal grill.", "priceAED": 125, "dietary": ["halal", "gluten-free"] },
+    { "id": "hammour", "category": "Mains", "nameEn": "Grilled Hammour", "nameAr": "هامور مشوي", "description": "Local grouper with saffron rice and tahini.", "priceAED": 115, "dietary": ["halal", "gluten-free"] },
+    { "id": "ouzi", "category": "Mains", "nameEn": "Lamb Ouzi", "nameAr": "أوزي لحم", "description": "Slow-roasted lamb shoulder over spiced rice with roasted almonds and cashews. Serves 2.", "priceAED": 145, "dietary": ["halal", "gluten-free", "contains-nuts"] },
+    { "id": "kunafa", "category": "Desserts", "nameEn": "Kunafa", "nameAr": "كنافة", "description": "Warm cheese pastry with syrup and pistachio.", "priceAED": 38, "dietary": ["vegetarian", "halal", "contains-nuts"] },
+    { "id": "umm-ali", "category": "Desserts", "nameEn": "Umm Ali", "nameAr": "أم علي", "description": "Baked bread pudding with milk, nuts and raisins.", "priceAED": 34, "dietary": ["vegetarian", "halal", "contains-nuts"] },
+    { "id": "luqaimat", "category": "Desserts", "nameEn": "Luqaimat", "nameAr": "لقيمات", "description": "Crispy dumplings with date syrup and sesame.", "priceAED": 28, "dietary": ["vegetarian", "halal"] },
+    { "id": "mint-lemonade", "category": "Drinks", "nameEn": "Fresh Mint Lemonade", "nameAr": "ليمون بالنعناع", "description": "Blended lemon and fresh mint.", "priceAED": 22, "dietary": ["vegetarian", "vegan", "halal", "gluten-free"] },
+    { "id": "karak", "category": "Drinks", "nameEn": "Karak Chai", "nameAr": "شاي كرك", "description": "Spiced tea with evaporated milk and cardamom.", "priceAED": 12, "dietary": ["vegetarian", "halal", "gluten-free"] }
+  ]
+}
